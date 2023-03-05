@@ -18,21 +18,21 @@ public class PlayerBase : MonoBehaviour
     {
         Vector3 currentPosition = transform.position;
 
-        if (Input.GetKey("a"))
-        {
-            currentPosition.x -= speed;
-        }
-        if (Input.GetKey("d"))
-        {
-            currentPosition.x += speed;
-        }
         if (Input.GetKey("w"))
         {
-            currentPosition.z += speed;
+            currentPosition += transform.forward * Time.deltaTime * speed;
+        }
+        if (Input.GetKey("a"))
+        {
+            currentPosition -= transform.right * Time.deltaTime * speed;
         }
         if (Input.GetKey("s"))
         {
-            currentPosition.z -= speed;
+            currentPosition -= transform.forward * Time.deltaTime * speed;
+        }
+        if (Input.GetKey("d"))
+        {
+            currentPosition += transform.right * Time.deltaTime * speed;
         }
         if (Input.GetKey("left"))
         {
