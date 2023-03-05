@@ -627,6 +627,10 @@ PrefabInstance:
       propertyPath: speed
       value: 0.03
       objectReference: {fileID: 0}
+    - target: {fileID: -8339769294222827523, guid: 889645dc44db64f73b1a56a6b6d17490, type: 3}
+      propertyPath: rotspeed
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 3000538897248265845, guid: 889645dc44db64f73b1a56a6b6d17490, type: 3}
       propertyPath: m_Name
       value: Hunter

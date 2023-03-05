@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayerBase : MonoBehaviour
 {
     public float speed;
+    public float rotspeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -17,21 +18,29 @@ public class PlayerBase : MonoBehaviour
     {
         Vector3 currentPosition = transform.position;
 
-        if (Input.GetKey("left") || Input.GetKey("a"))
+        if (Input.GetKey("a"))
         {
             currentPosition.x -= speed;
         }
-        if (Input.GetKey("right") || Input.GetKey("d"))
+        if (Input.GetKey("d"))
         {
             currentPosition.x += speed;
         }
-        if (Input.GetKey("up") || Input.GetKey("w"))
+        if (Input.GetKey("w"))
         {
             currentPosition.z += speed;
         }
-        if (Input.GetKey("down") || Input.GetKey("s"))
+        if (Input.GetKey("s"))
         {
             currentPosition.z -= speed;
+        }
+        if (Input.GetKey("left"))
+        {
+            transform.Rotate(-Vector3.up * rotspeed * Time.deltaTime);
+        }
+        if (Input.GetKey("right"))
+        {
+            transform.Rotate(Vector3.up * rotspeed * Time.deltaTime);
         }
         transform.position = currentPosition;
     }
