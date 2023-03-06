@@ -44,4 +44,5 @@ public class PlayerBase : MonoBehaviour
         }
         transform.position = currentPosition;
     }
+
 }

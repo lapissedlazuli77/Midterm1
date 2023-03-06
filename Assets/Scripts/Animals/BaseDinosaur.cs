@@ -20,6 +20,9 @@ public class BaseDinosaur : MonoBehaviour
     public float posx;
     public float posz;
 
+    float walkspeed;
+    float chasespeed;
+
     Vector3 destination;
 
     AudioSource thissound;
@@ -42,6 +45,8 @@ public class BaseDinosaur : MonoBehaviour
         posx = Random.Range(-100f, 100f);
         posz = Random.Range(-100f, 100f);
         destination.Set(posx, 0, posz);
+
+        walkspeed = nav.speed;
     }
 
     // Update is called once per frame
