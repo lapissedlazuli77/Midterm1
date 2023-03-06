@@ -17,6 +17,8 @@ public class BaseDinosaur : MonoBehaviour
     float idletime;
     int idlethresh;
 
+    protected float hp = 100;
+
     public float posx;
     public float posz;
 
@@ -47,18 +49,28 @@ public class BaseDinosaur : MonoBehaviour
         destination.Set(posx, 0, posz);
 
         walkspeed = nav.speed;
+
+        thissound.clip = walksound;
+        thissound.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (hp <= 0)
+        {
+            Death();
+        }
+
         if (hunting)
         {
             Chase();
-        } else if (!hunting && moving)
+        }
+        else if (!hunting && moving)
         {
             Wander();
-        } else
+        }
+        else
         {
             Idle();
         }
@@ -66,11 +78,12 @@ public class BaseDinosaur : MonoBehaviour
     }
     protected virtual void Chase()
     {
-        thissound.clip = runsound;
-        thissound.loop = true;
+        nav.speed = 6;
         nav.destination = player.position;
         if (timer >= hunttime)
         {
+            thissound.clip = walksound;
+            thissound.loop = true;
             hunting = false;
             timer = 0;
 
@@ -81,18 +94,22 @@ public class BaseDinosaur : MonoBehaviour
     }
     protected virtual void Wander()
     {
-        thissound.clip = walksound;
-        thissound.loop = true;
+        nav.speed = 3;
         nav.destination = destination;
         if (timer >= timertime)
         {
             int behavchooser = Random.Range(1, 4);
             if (behavchooser >= idlethresh)
             {
+                thissound.clip = idlesound;
+                thissound.loop = false;
+                thissound.Play();
+
                 timertime = Random.Range(4f, 10f);
                 timer = 0;
                 moving = false;
-            } else
+            }
+            else
             {
                 posx = Random.Range(-100f, 100f);
                 posz = Random.Range(-100f, 100f);
@@ -105,11 +122,13 @@ public class BaseDinosaur : MonoBehaviour
     }
     protected virtual void Idle()
     {
-        thissound.clip = idlesound;
-        thissound.loop = false;
         nav.destination = transform.position;
         if (timer >= idletime)
         {
+            thissound.clip = walksound;
+            thissound.loop = true;
+            thissound.Play();
+
             posx = Random.Range(-100f, 100f);
             posz = Random.Range(-100f, 100f);
             destination.Set(posx, 0, posz);
@@ -118,5 +137,15 @@ public class BaseDinosaur : MonoBehaviour
             timer = 0;
             moving = true;
         }
+    }
+    protected virtual void Damage(float damage)
+    {
+        hp -= damage;
+    }
+    protected virtual void Death()
+    {
+        thissound.clip = deathsound;
+        thissound.Play();
+        Destroy(this);
     }
 }

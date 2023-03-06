@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6902469992874511518}
   - component: {fileID: 6121770763124662356}
   - component: {fileID: 7621793767698140185}
+  - component: {fileID: 7528463079292154152}
+  - component: {fileID: 7103209617745741873}
   m_Layer: 0
   m_Name: Coelophysis
   m_TagString: Untagged
@@ -81,7 +83,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -91,7 +93,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 75
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -166,6 +168,39 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7528463079292154152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020201866275484066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2b46af5382e45c28e722cd3f991688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8239572709452611293, guid: 889645dc44db64f73b1a56a6b6d17490, type: 3}
+  posx: 0
+  posz: 0
+  walksound: {fileID: 8300000, guid: e1f45c4a23f3449d99c2b060dcc7871d, type: 3}
+  runsound: {fileID: 8300000, guid: c448058b4a0ad4c2eb925ff81eb8d88e, type: 3}
+  idlesound: {fileID: 8300000, guid: db95c7ea5cf774e3787577593646f7ed, type: 3}
+  huntsound: {fileID: 8300000, guid: 3e6348cce6c0b494e8239b837bbd4129, type: 3}
+  deathsound: {fileID: 8300000, guid: 460680bd92a7f412c9bb2162146f2352, type: 3}
+--- !u!65 &7103209617745741873
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020201866275484066}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 5}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &8333268795529955707
 GameObject:
   m_ObjectHideFlags: 0

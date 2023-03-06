@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -6919995010544261124}
   - component: {fileID: -7757784582250798735}
   - component: {fileID: 492770632124721543}
+  - component: {fileID: 5344052187004694608}
   m_Layer: 0
   m_Name: Tyrannosaurus rex
   m_TagString: Untagged
@@ -166,6 +167,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &5344052187004694608
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2272787737201875155}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 15}
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1 &7063715180029108234
 GameObject:
   m_ObjectHideFlags: 0

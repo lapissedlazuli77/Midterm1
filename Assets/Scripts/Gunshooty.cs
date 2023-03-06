@@ -4,30 +4,37 @@ using UnityEngine;
 
 public class Gunshooty : MonoBehaviour
 {
-    public Animator anim;
+    Animator anim;
     public GameObject bullet;
 
-    bool isfire;
+    AudioSource audiodata;
+
+    bool isfire = false;
 
     float timer = 0f;
     float waittime = 0.8f;
 
+    Vector3 shotspot;
+
     // Start is called before the first frame update
     void Start()
     {
-        anim = gameObject.GetComponent<Animator>();
-        isfire = false;
+        anim = this.GetComponent<Animator>();
+        audiodata = this.GetComponent<AudioSource>();
+        shotspot = this.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        shotspot = this.transform.position;
         if (Input.GetKeyDown("space") && isfire == false)
         {
             isfire = true;
             anim.SetBool("Firing", true);
-            GameObject shot = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
-            shot.GetComponent<Rigidbody>().AddForce(transform.forward * 10);
+            audiodata.Play();
+            GameObject shot = Instantiate(bullet, shotspot, Quaternion.identity) as GameObject;
+            shot.GetComponent<Rigidbody>().AddForce(transform.right * 20000);
         }
         while (isfire)
         {

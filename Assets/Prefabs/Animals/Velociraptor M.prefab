@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -7760614997719302752}
   - component: {fileID: -8900895880061919591}
   - component: {fileID: 381867333028509028}
+  - component: {fileID: -2483317345993963398}
   m_Layer: 0
   m_Name: Velociraptor M
   m_TagString: Untagged
@@ -166,6 +167,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &-2483317345993963398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638664897062084562}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 3}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7723812908700460811
 GameObject:
   m_ObjectHideFlags: 0
