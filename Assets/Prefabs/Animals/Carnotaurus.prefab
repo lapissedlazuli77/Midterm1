@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -8288347856094245186}
   - component: {fileID: -5836225326971910784}
   - component: {fileID: -4326814057988751627}
+  - component: {fileID: -8321115871537960965}
   m_Layer: 0
   m_Name: Carnotaurus
   m_TagString: Untagged
@@ -166,6 +167,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8321115871537960965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455841101147125862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb773ba6394b43f3b7a49b5354f7352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8239572709452611293, guid: 889645dc44db64f73b1a56a6b6d17490, type: 3}
+  posx: 0
+  posz: 0
+  walksound: {fileID: 8300000, guid: 538ec34f7e3f04bbf819fb2be02d1fc6, type: 3}
+  runsound: {fileID: 8300000, guid: 73f4805c994cb4e029c78e66339f7236, type: 3}
+  idlesound: {fileID: 0}
+  huntsound: {fileID: 8300000, guid: 03b66c6d2902e4abead44322d7ed145b, type: 3}
+  deathsound: {fileID: 8300000, guid: c9d94b5d8a8b748ae9e96088c4e0a5c4, type: 3}
 --- !u!1 &8925768258343583935
 GameObject:
   m_ObjectHideFlags: 0

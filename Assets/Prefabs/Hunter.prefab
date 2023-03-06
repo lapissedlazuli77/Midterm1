@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.09
+  rotspeed: 0
 --- !u!1 &9013441252327523096
 GameObject:
   m_ObjectHideFlags: 0
