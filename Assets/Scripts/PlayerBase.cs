@@ -7,6 +7,7 @@ public class PlayerBase : MonoBehaviour
 {
     public float speed;
     public float rotspeed;
+    public Vector3 currentpos;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +45,7 @@ public class PlayerBase : MonoBehaviour
             transform.Rotate(Vector3.up * rotspeed * Time.deltaTime);
         }
         transform.position = currentPosition;
+        currentpos = currentPosition;
     }
 
     private void OnCollisionEnter(Collision collision)

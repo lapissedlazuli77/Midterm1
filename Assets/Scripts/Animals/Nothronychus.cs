@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Nothronychus : BaseDinosaur
 {
-    protected override void Damage(float damage)
+
+    protected override void SetHealth()
     {
-        hp -= damage * 0.7f;
+        hp = 180;
     }
 }

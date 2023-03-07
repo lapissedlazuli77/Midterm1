@@ -11,9 +11,9 @@ public class Tyrannosaurusrex : BaseDinosaur
         nav.destination = player.position;
     }
 
-    protected override void Damage(float damage)
+    protected override void SetHealth()
     {
-        hp -= damage * 0.3f;
+        hp = 90000;
     }
     protected override void AccelerateSpeed()
     {

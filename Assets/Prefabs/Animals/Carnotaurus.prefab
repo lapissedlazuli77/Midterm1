@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8239572709452611293, guid: 889645dc44db64f73b1a56a6b6d17490, type: 3}
+  play: {fileID: -8339769294222827523, guid: 889645dc44db64f73b1a56a6b6d17490, type: 3}
   nav: {fileID: -5836225326971910784}
   posx: 0
   posz: 0

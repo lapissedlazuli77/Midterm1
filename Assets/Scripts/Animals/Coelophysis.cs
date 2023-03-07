@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class Coelophysis : BaseDinosaur
 {
-    
+
+    protected override void SetHealth()
+    {
+        hp = 70;
+    }
 }

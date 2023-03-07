@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class BaseDinosaur : MonoBehaviour
 {
     public Transform player;
+    public PlayerBase play;
     public NavMeshAgent nav;
 
     bool hunting = false;
@@ -59,11 +60,12 @@ public class BaseDinosaur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerpos = player.position;
+        playerpos = play.currentpos;
         if (hp > 0)
         {
             if (hunting)
             {
+                nav.SetDestination(play.currentpos);
                 Chase();
             }
             else if (!hunting && moving)
@@ -80,7 +82,6 @@ public class BaseDinosaur : MonoBehaviour
     protected virtual void Chase()
     {
         AccelerateSpeed();
-        nav.destination = playerpos;
         if (timer >= hunttime)
         {
             thissound.clip = walksound;
@@ -163,16 +164,12 @@ public class BaseDinosaur : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             Damage(20);
-            nav.destination = player.position;
+            nav.SetDestination(player.transform.position);
             thissound.clip = huntsound;
             thissound.loop = false;
             thissound.Play();
             hunting = true;
             moving = true;
-
-            thissound.clip = runsound;
-            thissound.loop = true;
-            thissound.Play();
         }
     }
 
@@ -180,4 +177,12 @@ public class BaseDinosaur : MonoBehaviour
     {
         nav.speed = 6;
     }
+
+
+    protected virtual void SetHealth()
+    {
+        hp = 100;
+    }
+
+
 }
