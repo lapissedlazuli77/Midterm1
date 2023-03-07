@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 4558064469778870228}
   - component: {fileID: 185258508229226820}
   - component: {fileID: 2672937315423405122}
+  - component: {fileID: 8570451135876673558}
   m_Layer: 0
   m_Name: Nothronychus
   m_TagString: Untagged
@@ -165,7 +166,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -175,7 +176,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -263,3 +264,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 3, z: 5}
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!114 &8570451135876673558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6824026154972882942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f458c57e5958a4668b9c7e201b1ce621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8239572709452611293, guid: 889645dc44db64f73b1a56a6b6d17490, type: 3}
+  nav: {fileID: 4558064469778870228}
+  posx: 0
+  posz: 0
+  walksound: {fileID: 8300000, guid: e1f45c4a23f3449d99c2b060dcc7871d, type: 3}
+  runsound: {fileID: 8300000, guid: c448058b4a0ad4c2eb925ff81eb8d88e, type: 3}
+  idlesound: {fileID: 8300000, guid: c331e5bafbc2a4991bd2c83aec492911, type: 3}
+  huntsound: {fileID: 0}
+  deathsound: {fileID: 8300000, guid: 6092dd90b04ed413a9bcf9509f508816, type: 3}

@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class BaseDinosaur : MonoBehaviour
 {
     public Transform player;
-    NavMeshAgent nav;
+    public NavMeshAgent nav;
 
     bool hunting = false;
     bool moving = true;
@@ -15,6 +15,7 @@ public class BaseDinosaur : MonoBehaviour
     float timertime;
     float hunttime;
     float idletime;
+    float deathtime;
     int idlethresh;
 
     protected float hp = 100;
@@ -26,6 +27,7 @@ public class BaseDinosaur : MonoBehaviour
     float chasespeed;
 
     Vector3 destination;
+    Vector3 playerpos;
 
     AudioSource thissound;
     public AudioClip walksound;
@@ -57,29 +59,28 @@ public class BaseDinosaur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hp <= 0)
+        playerpos = player.position;
+        if (hp > 0)
         {
-            Death();
-        }
-
-        if (hunting)
-        {
-            Chase();
-        }
-        else if (!hunting && moving)
-        {
-            Wander();
-        }
-        else
-        {
-            Idle();
+            if (hunting)
+            {
+                Chase();
+            }
+            else if (!hunting && moving)
+            {
+                Wander();
+            }
+            else
+            {
+                Idle();
+            }
         }
         timer += Time.deltaTime;
     }
     protected virtual void Chase()
     {
-        nav.speed = 6;
-        nav.destination = player.position;
+        AccelerateSpeed();
+        nav.destination = playerpos;
         if (timer >= hunttime)
         {
             thissound.clip = walksound;
@@ -141,11 +142,42 @@ public class BaseDinosaur : MonoBehaviour
     protected virtual void Damage(float damage)
     {
         hp -= damage;
+        if (hp <= 0)
+        {
+            timer = 0;
+            Death();
+        }
     }
     protected virtual void Death()
     {
         thissound.clip = deathsound;
         thissound.Play();
-        Destroy(this);
+
+        if (timer >= deathtime)
+        {
+            Destroy(gameObject);
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Damage(20);
+            nav.destination = player.position;
+            thissound.clip = huntsound;
+            thissound.loop = false;
+            thissound.Play();
+            hunting = true;
+            moving = true;
+
+            thissound.clip = runsound;
+            thissound.loop = true;
+            thissound.Play();
+        }
+    }
+
+    protected virtual void AccelerateSpeed()
+    {
+        nav.speed = 6;
     }
 }

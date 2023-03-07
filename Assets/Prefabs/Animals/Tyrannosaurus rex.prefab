@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7757784582250798735}
   - component: {fileID: 492770632124721543}
   - component: {fileID: 5344052187004694608}
+  - component: {fileID: -6431665910213816785}
   m_Layer: 0
   m_Name: Tyrannosaurus rex
   m_TagString: Untagged
@@ -47,7 +48,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 50
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &-7757784582250798735
 NavMeshAgent:
@@ -82,7 +83,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -92,7 +93,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 60
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -180,6 +181,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 5, z: 15}
   m_Center: {x: 0, y: 2.5, z: 0}
+--- !u!114 &-6431665910213816785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2272787737201875155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b61f39fef834a36967868ac28bb6c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8239572709452611293, guid: 889645dc44db64f73b1a56a6b6d17490, type: 3}
+  nav: {fileID: -7757784582250798735}
+  posx: 0
+  posz: 0
+  walksound: {fileID: 8300000, guid: 538ec34f7e3f04bbf819fb2be02d1fc6, type: 3}
+  runsound: {fileID: 8300000, guid: 73f4805c994cb4e029c78e66339f7236, type: 3}
+  idlesound: {fileID: 8300000, guid: cd1a3b03f39c24fc990d54f32d444dcd, type: 3}
+  huntsound: {fileID: 8300000, guid: d8dfd5b5dc9a94536be059db603b080c, type: 3}
+  deathsound: {fileID: 8300000, guid: a354056c1a067489090788e9f971fd82, type: 3}
 --- !u!1 &7063715180029108234
 GameObject:
   m_ObjectHideFlags: 0

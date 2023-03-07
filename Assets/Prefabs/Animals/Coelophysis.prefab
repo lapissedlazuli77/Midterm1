@@ -93,7 +93,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 75
+  MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8239572709452611293, guid: 889645dc44db64f73b1a56a6b6d17490, type: 3}
+  nav: {fileID: 6121770763124662356}
   posx: 0
   posz: 0
   walksound: {fileID: 8300000, guid: e1f45c4a23f3449d99c2b060dcc7871d, type: 3}

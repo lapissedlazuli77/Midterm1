@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8900895880061919591}
   - component: {fileID: 381867333028509028}
   - component: {fileID: -2483317345993963398}
+  - component: {fileID: 8243355043596958848}
   m_Layer: 0
   m_Name: Velociraptor M
   m_TagString: Untagged
@@ -82,7 +83,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -92,7 +93,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -180,6 +181,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 3}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &8243355043596958848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638664897062084562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eeb2a9b228c44d998dc3db0bb7faaea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8239572709452611293, guid: 889645dc44db64f73b1a56a6b6d17490, type: 3}
+  nav: {fileID: -8900895880061919591}
+  posx: 0
+  posz: 0
+  walksound: {fileID: 8300000, guid: e1f45c4a23f3449d99c2b060dcc7871d, type: 3}
+  runsound: {fileID: 8300000, guid: c448058b4a0ad4c2eb925ff81eb8d88e, type: 3}
+  idlesound: {fileID: 0}
+  huntsound: {fileID: 8300000, guid: a575d1a8c7611441fbbaaba7d74645d8, type: 3}
+  deathsound: {fileID: 8300000, guid: c1e61f9adb5fc4c4bbaac6877cfcbbe7, type: 3}
 --- !u!1 &7723812908700460811
 GameObject:
   m_ObjectHideFlags: 0

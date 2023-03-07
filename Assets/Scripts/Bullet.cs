@@ -18,12 +18,15 @@ public class Bullet : MonoBehaviour
         if (currentPosition.x >= 110 || currentPosition.y >= 110 || currentPosition.z >= 110
             || currentPosition.x <= -110 || currentPosition.y <= -110 || currentPosition.z <= -110)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        Destroy(this);
+        if (collision.gameObject.tag != "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }

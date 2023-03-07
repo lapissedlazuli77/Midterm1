@@ -3,7 +3,13 @@ guid: f2b61f39fef834a36967868ac28bb6c0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - walksound: {instanceID: 0}
+  - runsound: {instanceID: 0}
+  - idlesound: {instanceID: 0}
+  - huntsound: {instanceID: 0}
+  - deathsound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
