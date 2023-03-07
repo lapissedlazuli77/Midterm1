@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBase : MonoBehaviour
 {
@@ -45,4 +46,11 @@ public class PlayerBase : MonoBehaviour
         transform.position = currentPosition;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+    }
 }
